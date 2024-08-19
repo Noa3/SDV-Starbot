@@ -1,25 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.539
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35208.52
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starbot", "Starbot.csproj", "{155CE097-B50B-475D-B420-8060A092C267}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starbot", "Starbot.csproj", "{4BA00185-E650-4BCD-8126-661DB8B6DB98}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x86 = Debug|x86
-		Release|x86 = Release|x86
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{155CE097-B50B-475D-B420-8060A092C267}.Debug|x86.ActiveCfg = Release|x86
-		{155CE097-B50B-475D-B420-8060A092C267}.Debug|x86.Build.0 = Release|x86
-		{155CE097-B50B-475D-B420-8060A092C267}.Release|x86.ActiveCfg = Release|x86
-		{155CE097-B50B-475D-B420-8060A092C267}.Release|x86.Build.0 = Release|x86
+		{4BA00185-E650-4BCD-8126-661DB8B6DB98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BA00185-E650-4BCD-8126-661DB8B6DB98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BA00185-E650-4BCD-8126-661DB8B6DB98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BA00185-E650-4BCD-8126-661DB8B6DB98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {E16E5473-CC69-4796-83A6-760ACC23239C}
+		SolutionGuid = {8E42296B-DFB2-4E5E-8B33-E9AE5CCC22A4}
 	EndGlobalSection
 EndGlobal
