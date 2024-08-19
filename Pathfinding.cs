@@ -159,7 +159,8 @@ namespace Starbot.Pathfinder
                 if (w.X == x && w.Y == y) isWarp = true;
             }
             bool isOnMap = location.isTileOnMap(v);
-            bool isOccupied = location.isTileOccupiedIgnoreFloors(v, "");
+            //bool isOccupied = location.isTileOccupiedIgnoreFloors(v, "");
+            bool isOccupied = location.IsLocationSpecificOccupantOnTile(v);
             bool isPassable = location.isTilePassable(new xTile.Dimensions.Location((int)x, (int)y), Game1.viewport);
             //check for bigresourceclumps on the farm
             if(location is Farm)
@@ -173,19 +174,20 @@ namespace Starbot.Pathfinder
                     if (xx > r.X && xx < r.X + r.Width && yy > r.Y && yy < r.Y + r.Height) return false;
                 }
             }
-            if (location is StardewValley.Locations.BuildableGameLocation)
-            {
-                var bgl = location as StardewValley.Locations.BuildableGameLocation;
-                foreach (var b in bgl.buildings)
-                {
-                    if (!b.isTilePassable(v)) return false;
-                }
-            }
-            if(location is StardewValley.Locations.BuildableGameLocation || location is Farm)
-            {
-                //more aggressive test. doesn't like floors
-                if (location.isCollidingPosition(new Rectangle((x * 64) + 2, (y * 64) + 2, 60, 60), Game1.viewport, true, 0, false, null, false, false, true)) return false;
-            }
+            //TODO: Reintegrate after fix
+            //if (location is StardewValley.Locations.BuildableGameLocation)
+            //{
+            //    var bgl = location as StardewValley.Locations.BuildableGameLocation;
+            //    foreach (var b in bgl.buildings)
+            //    {
+            //        if (!b.isTilePassable(v)) return false;
+            //    }
+            //}
+            //if(location is StardewValley.Locations.BuildableGameLocation || location is Farm)
+            //{
+            //    //more aggressive test. doesn't like floors
+            //    if (location.isCollidingPosition(new Rectangle((x * 64) + 2, (y * 64) + 2, 60, 60), Game1.viewport, true, 0, false, null, false, false, true)) return false;
+            //}
             return (isWarp || (isOnMap && !isOccupied && isPassable)); //warps must be passable even off-map
         }
 

@@ -58,7 +58,7 @@ namespace Starbot
 
             else if(e.Button == SButton.F)
             {
-                Monitor.Log("Player location: " + StardewValley.Game1.player.currentLocation.NameOrUniqueName + ", " + StardewValley.Game1.player.getTileX() + ", " + StardewValley.Game1.player.getTileY());
+                Monitor.Log("Player location: " + StardewValley.Game1.player.currentLocation.NameOrUniqueName + ", " + (int)StardewValley.Game1.player.Tile.X + ", " + (int)StardewValley.Game1.player.Tile.Y);
             }
         }
 

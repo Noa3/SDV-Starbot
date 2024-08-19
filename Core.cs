@@ -175,18 +175,19 @@ namespace Starbot
                         return;
                     }
                 }
-                if (Game1.player.currentLocation is StardewValley.Locations.BuildableGameLocation)
-                {
-                    StardewValley.Locations.BuildableGameLocation bl = Game1.player.currentLocation as StardewValley.Locations.BuildableGameLocation;
-                    foreach (var b in bl.buildings)
-                    {
-                        if(b.indoors.Value.NameOrUniqueName == Route[0])
-                        {
-                            PathfindTo(b.getPointForHumanDoor().X, b.getPointForHumanDoor().Y + 1, IsCriticalRoute, true);
-                            return;
-                        }
-                    }
-                }
+                //TODO: Correct This
+                //if (Game1.player.currentLocation is StardewValley.Locations.BuildableGameLocation)
+                //{
+                //    StardewValley.Locations.BuildableGameLocation bl = Game1.player.currentLocation as StardewValley.Locations.BuildableGameLocation;
+                //    foreach (var b in bl.buildings)
+                //    {
+                //        if(b.indoors.Value.NameOrUniqueName == Route[0])
+                //        {
+                //            PathfindTo(b.getPointForHumanDoor().X, b.getPointForHumanDoor().Y + 1, IsCriticalRoute, true);
+                //            return;
+                //        }
+                //    }
+                //}
 
             }
         }
@@ -200,7 +201,7 @@ namespace Starbot
         private static bool PathfindTo(int x, int y, bool critical = false, bool openDoor = false, int cutoff = -1)
         {
             //Mod.instance.Monitor.Log("Pathfinding to: " + x + ", " + y, LogLevel.Trace);
-            var path = Pathfinder.Pathfinder.FindPath(Game1.player.currentLocation, Game1.player.getTileX(), Game1.player.getTileY(), x, y, cutoff);
+            var path = Pathfinder.Pathfinder.FindPath(Game1.player.currentLocation, (int)Game1.player.Tile.X, (int)Game1.player.Tile.Y, x, y, cutoff);
             if (path == null)
             {
                 if (critical)
@@ -401,8 +402,8 @@ namespace Starbot
                 if (IsSleeping) return;
 
                 //cache player position
-                int px = Game1.player.getTileX();
-                int py = Game1.player.getTileY();
+                int px = (int)Game1.player.Tile.X;
+                int py = (int)Game1.player.Tile.Y;
 
                 //for now, if stuck let's just shut it down
                 if (IsStuck)
@@ -522,9 +523,9 @@ namespace Starbot
             }
             for (int index = 0; index < 12; ++index)
             {
-                if (Game1.player.items.Count > index && Game1.player.items.ElementAt<Item>(index) != null)
+                if (Game1.player.Items.Count > index && Game1.player.Items.ElementAt<Item>(index) != null)
                 {
-                    if(Game1.player.items[index] == t)
+                    if(Game1.player.Items[index] == t)
                     {
                         //found it
                         if(Game1.player.CurrentToolIndex != index)
@@ -545,7 +546,7 @@ namespace Starbot
         {
             OpeningDoor = true;
             //StartMovingUp();
-            FaceTile(Game1.player.getTileX(), Game1.player.getTileY() - 1);
+            FaceTile((int)Game1.player.Tile.X, (int)Game1.player.Tile.Y - 1);
             StartActionButton();
         }
 

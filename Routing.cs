@@ -51,19 +51,20 @@ namespace Starbot
                         //foreach (var s in MapConnections[key]) Mod.instance.Monitor.Log("It connects to " + s, LogLevel.Warn);
                     }
                 }
-                if(gl is StardewValley.Locations.BuildableGameLocation)
-                {
-                    StardewValley.Locations.BuildableGameLocation bl = gl as StardewValley.Locations.BuildableGameLocation;
-                    foreach(var b in bl.buildings)
-                    {
-                        if(!returnValue.ContainsKey(key)) returnValue[key] = new HashSet<string>();
-                        returnValue[key].Add(b.indoors.Value.NameOrUniqueName);
-                        //add the way in
-                        returnValue[b.indoors.Value.NameOrUniqueName] = new HashSet<string>();
-                        //add the way out
-                        returnValue[b.indoors.Value.NameOrUniqueName].Add(key);
-                    }
-                }
+                //TODO: Reintegrate // Correct this
+                //if(gl is StardewValley.Locations.BuildableGameLocation)
+                //{
+                //    StardewValley.Locations.BuildableGameLocation bl = gl as StardewValley.Locations.BuildableGameLocation;
+                //    foreach(var b in bl.buildings)
+                //    {
+                //        if(!returnValue.ContainsKey(key)) returnValue[key] = new HashSet<string>();
+                //        returnValue[key].Add(b.indoors.Value.NameOrUniqueName);
+                //        //add the way in
+                //        returnValue[b.indoors.Value.NameOrUniqueName] = new HashSet<string>();
+                //        //add the way out
+                //        returnValue[b.indoors.Value.NameOrUniqueName].Add(key);
+                //    }
+                //}
             }
             return returnValue;
         }

@@ -59,7 +59,9 @@ namespace Starbot.Objectives
                 Mod.instance.Monitor.Log("Scanning for forage items...", StardewModdingAPI.LogLevel.Warn);
                 foreach(var o in Game1.currentLocation.Objects.Values)
                 {
-                    if (o.isForage(Game1.currentLocation))
+                    //TODO: Check what is wrong here and maybe correct it
+                    //if (o.isForage(Game1.currentLocation))
+                    if (o.isForage())
                     {
                         bool hs = false;
                         if (o.ParentSheetIndex == 590) hs = true;
@@ -131,8 +133,8 @@ namespace Starbot.Objectives
                 {
                     int x = spot.Item1;
                     int y = spot.Item2;
-                    int px = Game1.player.getTileX();
-                    int py = Game1.player.getTileY();
+                    int px = (int)Game1.player.Tile.X;
+                    int py = (int)Game1.player.Tile.Y;
 
                     Core.FaceTile(x, y);
 

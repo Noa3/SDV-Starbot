@@ -57,7 +57,7 @@ namespace Starbot.Objectives
         List<Tuple<int,int>> SortByDistance(List<Tuple<int,int>> lst)
         {
             List<Tuple<int, int>> output = new List<Tuple<int, int>>();
-            output.Add(lst[NearestPoint(new Tuple<int, int>(Game1.player.getTileX(), Game1.player.getTileY()), lst)]);
+            output.Add(lst[NearestPoint(new Tuple<int, int>((int)Game1.player.Tile.X, (int)Game1.player.Tile.Y), lst)]);
             lst.Remove(output[0]);
             int x = 0;
             for (int i = 0; i < lst.Count + x; i++)
@@ -209,8 +209,8 @@ namespace Starbot.Objectives
                         {
                             int x = spot.Item1;
                             int y = spot.Item2;
-                            int px = Game1.player.getTileX();
-                            int py = Game1.player.getTileY();
+                            int px = (int)Game1.player.Tile.X;
+                            int py = (int)Game1.player.Tile.Y;
 
                             Core.FaceTile(x, y);
 
@@ -282,8 +282,8 @@ namespace Starbot.Objectives
                         {
                             int x = spot.Item1;
                             int y = spot.Item2;
-                            int px = Game1.player.getTileX();
-                            int py = Game1.player.getTileY();
+                            int px = (int)Game1.player.Tile.X;
+                            int py = (int)Game1.player.Tile.Y;
 
                             Core.FaceTile(x, y);
 
@@ -355,8 +355,8 @@ namespace Starbot.Objectives
                         {
                             int x = spot.Item1;
                             int y = spot.Item2;
-                            int px = Game1.player.getTileX();
-                            int py = Game1.player.getTileY();
+                            int px = (int)Game1.player.Tile.X;
+                            int py = (int)Game1.player.Tile.Y;
 
                             Core.FaceTile(x, y);
 
