@@ -1,10 +1,10 @@
 {
   "Name": "Starbot",
-  "Author": "bwdy",
-  "Version": "0.7.0",
+  "Author": "bwdy || updated by Noa3",
+  "Version": "0.7.1",
   "Description": "An autonomous Stardew Valley player.",
+  "UniqueID": "noa3.starbot",
   "EntryDll": "Starbot.dll",
-  "MinimumApiVersion": "3.0",
-  "UniqueID": "bwdy.starbot",
-  "UpdateKeys": [ "Nexus:4755" ]
+  "MinimumApiVersion": "4.0.0",
+  "UpdateKeys": [] // [ "Nexus:4755" ]
 }
